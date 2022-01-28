@@ -1,0 +1,95 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Global css */
+
+.icon{
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.logo{
+    display: grid;
+    justify-items: center;
+}
+
+.header{
+    width: 100%;
+    padding-top: 30px;
+    background-color: black;
+    color: white;
+}
+
+/* Css for navbar */
+
+.nav{
+    margin-top: 30px;
+    width: 100%;
+}
+
+.nav-parent{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+}
+
+.nav-link{
+    list-style-type: none;
+    width: 30%;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    font-family: poppins;
+    font-size: 18px;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.nav-link:hover{
+    background-color: white;
+    color: rgb(189, 91, 0);
+    font-weight: bold;
+}
+
+/* Css for calculator section */
+
+.btn{
+    padding: 25px 55px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.btn:hover{
+    background-color: black;
+    color: rgb(189, 91, 0);
+    font-weight: bold;
+}
+
+.calculator{
+    display: grid;
+    width: 100%;
+    justify-content: center;
+}
+
+.number_container{
+    margin-top: 80px;
+    border: dotted;
+}
+
+#op{
+    width: 40%;
+    background-color: green;
+    color: indianred;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-left: 25%;
+}

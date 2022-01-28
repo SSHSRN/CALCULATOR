@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+
+        <!-- Header -->
+
+        <header class="header">
+            <div class="container container1">
+                <div class="logo">
+                    <img class="icon" src="https://icons.iconarchive.com/icons/wineass/ios7-redesign/256/Calculator-icon.png" alt="calc_logo"/>
+                    <h1>+-*/Calculator/*-+</h1>
+                </div>
+            </div>
+
+            <!-- Nav area -->
+
+            <nav class="nav">
+                <ul class="nav-parent">
+                    <li class="nav-link">Home</li>
+                    <li class="nav-link">About</li>
+                    <li class="nav-link">Contact</li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main section -->
+
+        <section class="calculator">
+            <div class="number_container">
+                <div>
+                    <input type="textbox" name="op" id="op" disabled>
+                </div>
+                <div>
+                    <button class="btn" onclick="append(9)">9</button>
+                    <button class="btn" onclick="append(8)">8</button>
+                    <button class="btn" onclick="append(7)">7</button>
+                    <button class="btn" onclick="append('/')">/</button>
+                </div>
+                <div>
+                    <button class="btn" onclick="append(6)">6</button>
+                    <button class="btn" onclick="append(5)">5</button>
+                    <button class="btn" onclick="append(4)">4</button>
+                    <button class="btn" onclick="append('*')">*</button>
+                </div>
+                <div>
+                    <button class="btn" onclick="append(3)">3</button>
+                    <button class="btn" onclick="append(2)">2</button>
+                    <button class="btn" onclick="append(1)">1</button>
+                    <button class="btn" onclick="append('-')">-</button>
+                </div>
+                <div>
+                    <button class="btn" onclick="append(0)">0</button>
+                    <button class="btn" onclick="append('.')">.</button>
+                    <button class="btn" onclick="displayres()">=</button>
+                    <button class="btn" onclick="append('+')">+</button>
+                    </div>
+            </div>
+        </section>
+    </body>
+    <script>
+        var result = 0;
+        var v1=0;
+        var v2=0;
+        var isOperator = 0;
+        function display(a){
+            var op = document.getElementById('op');
+            op.value = a;
+        }
+        function append(i){
+            if(!isOperator){
+                op.value += i;
+            }
+
+            if(i=='+' || i=='-' || i=='*' || i=='/'){
+                operator = i;
+                isOperator=1;
+                append(i);
+                v1=v1.pop();
+            }
+            else{
+                isOperator=0;
+            }
+        }
+        function displayres(){
+            var op = document.getElementById('op');
+            if(operator=='+'){
+                result=parseInt(v1);
+            }
+            op.value = result;
+        }
+    </script>
+</html>
