@@ -55,7 +55,9 @@
 
 /* Css for calculator section */
 
-.btn{
+td{
+    width: 50px;
+    text-align: center;
     padding: 25px 55px;
     margin: 10px;
     border-radius: 10px;
@@ -64,7 +66,7 @@
     font-weight: bold;
 }
 
-.btn:hover{
+td:hover{
     background-color: black;
     color: rgb(189, 91, 0);
     font-weight: bold;
@@ -82,7 +84,7 @@
 }
 
 #op{
-    width: 40%;
+    width: 50%;
     background-color: green;
     color: indianred;
     padding-top: 10px;
@@ -91,5 +93,5 @@
     padding-right: 5%;
     font-size: 30px;
     margin-top: 10px;
-    margin-left: 25%;
+    margin-left: 20%;
 }
