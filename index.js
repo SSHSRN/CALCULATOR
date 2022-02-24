@@ -7,7 +7,7 @@ let operands = [];
 let expression = [];
 let operand = "";
 let operators = [];
-var clicked = false;
+let clicked = false;
 
 // Function to validate a value before entering it into the expression.
 function validate(i) {
@@ -25,6 +25,7 @@ function validate(i) {
     }
 }
 
+// Function to append a value.
 function append(i){
     let v = validate(i);
     if(v){
@@ -43,6 +44,7 @@ function append(i){
     }
 }
 
+// Function to enter last character and evaluate.
 function enter() {
     if(!clicked){
         if (operator.includes(op.value[op.value.length-1])){
@@ -56,6 +58,18 @@ function enter() {
     }
 }
 
+// Function to delete
+function del() {
+    op.value = op.value.slice(0, -1);
+    if(operator.includes(op.value[op.value.length-1])){
+        operators.pop();
+    }
+    else{
+        operand = operand.slice(0, -1);
+    }
+}
+
+// Function to clear everything
 function clearAll() {
     op.value = '';
     operands = [];
