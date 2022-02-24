@@ -37,9 +37,9 @@
                 </div>
                 <table>
                     <tr>
-                        <td colspan="2">AC</td>
+                        <td colspan="2" onclick="clearAll()">AC</td>
                         <td>DEL</td>
-                        <td>/</td>
+                        <td onclick="append('/')">/</td>
                     </tr>
                     <tr>
                         <td onclick="append(1)">1</td>
@@ -62,7 +62,7 @@
                     <tr>
                         <td onclick="append('.')">.</td>
                         <td onclick="append(0)">0</td>
-                        <td onclick="" colspan="2">=</td>
+                        <td onclick="enter()" colspan="2">=</td>
                     </tr>
                 </table>
             </div>
