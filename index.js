@@ -15,10 +15,10 @@ function validate(i) {
     // console.log(l);
     // console.log(op.value[l-1]);
     if(op.value === '' && operator.includes(i)){
-        return false;
+        return false; // The very first element inside an expression should not be an operator.
     }
     else if ((operator.includes(op.value[l-1])) && (operator.includes(i))){
-         return false;
+         return false; // Two consecutive elements should not be operators.
         }
     else{
         return true;
@@ -54,6 +54,10 @@ function enter() {
             clicked = true;
             operands.push(operand);
             expression.push(operand);
+            // We can directly evalute the value of the expression using eval() function of js.
+            result = eval(op.value); 
+            // console.log(result);
+            op.value = result;
         }
     }
 }
