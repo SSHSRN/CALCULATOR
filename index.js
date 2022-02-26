@@ -2,25 +2,27 @@
 var result = 0;
 var isOperator = 0;
 var op = document.getElementById('op');
-let operator = ['+','-','*','/','.'];
+let operator = ['+','-','*','/'];
 let parentheses = ['(',')'];
 let decimalPoint = false;
-let operands = [];
-let operand = "";
-let operators = [];
-let clicked = false;
+// let operands = [];
+// let operand = "";
+// let operators = [];
 
 // Function to validate a value before entering it into the expression.
 function validate(i) {
     let l = op.value.length;
     // console.log(l);
     // console.log(op.value[l-1]);
-    if(op.value === '' && operator.includes(i)){
-        alert("The first element of the expression should not be " + i + '.');
+    if(decimalPoint && i ==='.'){
+        alert("An operand can have only one decimal point. Check the expresssion.");
+    }
+    else if(op.value === '' && (i==='*' || i==='/')){
+        alert("The first element of the expression should not be '" + i + "'. Check the expresssion.");
         return false; // The very first element inside an expression should not be an operator.
     }
     else if ((operator.includes(op.value[l-1])) && (operator.includes(i))){
-        alert("Two consecutive elements of the expression should not be operators.");
+        alert("Two consecutive elements of the expression should not be operators. Check the expresssion.");
          return false; // Two consecutive elements should not be operators.
         }
     else{
@@ -32,14 +34,14 @@ function validate(i) {
 function append(i){
     let v = validate(i);
     if(v){
-        clicked = false;
         if(operator.includes(i)){
-            operators.push(i);
-            operands.push(operand);
-            operand = "";
+            // operators.push(i);
+            // operands.push(operand);
+            // operand = "";
+            decimalPoint = false;
         }
-        else{
-            operand = operand.concat(i);
+        else if(i === '.'){
+            decimalPoint = true;
         }
         op.value += i;
     }
@@ -57,7 +59,7 @@ function balancedParenthesis(exp) {
         }
         else if(exp[i] == ')'){
             if(pArr.length === 0){
-                alert("The brackets are not balanced. Check the expresssion ");
+                alert("The brackets are not balanced. Check the expresssion. ");
                 return 0;
             }
             pArr.pop();
@@ -81,7 +83,7 @@ function enter() {
             alert("The last value of an expression should not be an operator.");
         }
         else{
-            operands.push(operand);
+            // operands.push(operand);
             // We can directly evalute the value of the expression using eval() function of js.
             result = eval(op.value); 
             // console.log(result);
@@ -93,18 +95,18 @@ function enter() {
 // Function to delete
 function del() {
     op.value = op.value.slice(0, -1);
-    if(operator.includes(op.value[op.value.length-1])){
-        operators.pop();
-    }
-    else{
-        operand = operand.slice(0, -1);
-    }
+    // if(operator.includes(op.value[op.value.length-1])){
+    //     operators.pop();
+    // }
+    // else{
+    //     operand = operand.slice(0, -1);
+    // }
 }
 
 // Function to clear everything
 function clearAll() {
     op.value = '';
-    operands = [];
-    operators = [];
-    operand = "";
+    // operands = [];
+    // operators = [];
+    // operand = "";
 }
