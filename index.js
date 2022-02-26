@@ -3,8 +3,9 @@ var result = 0;
 var isOperator = 0;
 var op = document.getElementById('op');
 let operator = ['+','-','*','/','.'];
+let parentheses = ['(',')'];
+let decimalPoint = false;
 let operands = [];
-let expression = [];
 let operand = "";
 let operators = [];
 let clicked = false;
@@ -15,9 +16,11 @@ function validate(i) {
     // console.log(l);
     // console.log(op.value[l-1]);
     if(op.value === '' && operator.includes(i)){
+        alert("The first element of the expression should not be " + i + '.');
         return false; // The very first element inside an expression should not be an operator.
     }
     else if ((operator.includes(op.value[l-1])) && (operator.includes(i))){
+        alert("Two consecutive elements of the expression should not be operators.");
          return false; // Two consecutive elements should not be operators.
         }
     else{
@@ -33,8 +36,6 @@ function append(i){
         if(operator.includes(i)){
             operators.push(i);
             operands.push(operand);
-            expression.push(operand);
-            expression.push(i);
             operand = "";
         }
         else{
@@ -44,16 +45,43 @@ function append(i){
     }
 }
 
+// Function to check if Parenthesis is balanced
+function balancedParenthesis(exp) {
+    // Create and initialise the stack
+    let pArr = [];
+    let i = 0;
+    for (i = 0; i < exp.length; i++)
+    {
+        if(exp[i] == '('){
+            pArr.push(exp[i]);
+        }
+        else if(exp[i] == ')'){
+            if(pArr.length === 0){
+                alert("The brackets are not balanced. Check the expresssion ");
+                return 0;
+            }
+            pArr.pop();
+        }
+    }
+    if(pArr.length === 0){
+        // alert("The brackets are balanced.");
+        return 1;
+    }
+    else{
+        alert("The brackets are not balanced. Check the expresssion ");
+        return 0;
+    }
+}
+
 // Function to enter last character and evaluate.
 function enter() {
-    if(!clicked){
+    let b = balancedParenthesis(op.value);
+    if(b){
         if (operator.includes(op.value[op.value.length-1])){
             alert("The last value of an expression should not be an operator.");
         }
         else{
-            clicked = true;
             operands.push(operand);
-            expression.push(operand);
             // We can directly evalute the value of the expression using eval() function of js.
             result = eval(op.value); 
             // console.log(result);
