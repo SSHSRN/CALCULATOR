@@ -38,35 +38,35 @@
                 <table>
                     <tr>
                         <td colspan="2" onclick="clearAll()">AC</td>
-                        <td onclick="del()">DEL</td>
-                        <td onclick="append('/')">/</td>
+                        <td class="key" onclick="del()" data-key="46">DEL</td>
+                        <td class="key" data-key="111" onclick="append('/')">/</td>
                     </tr>
                     <tr>
-                        <td colspan="2" onclick="append('(')">(</td>
-                        <td colspan="2" onclick="append(')')">)</td>
+                        <td class="key" data-operator="(" colspan="2" onclick="append('(')">(</td>
+                        <td class="key" data-operator=")" colspan="2" onclick="append(')')">)</td>
                     </tr>
                     <tr>
-                        <td onclick="append(1)">1</td>
-                        <td onclick="append(2)">2</td>
-                        <td onclick="append(3)">3</td>
-                        <td onclick="append('*')">*</td>
+                        <td class="key" data-key="97" data-key1="49" onclick="append(1)">1</td>
+                        <td class="key" data-key="98" data-key1="50" onclick="append(2)">2</td>
+                        <td class="key" data-key="99" data-key1="51" onclick="append(3)">3</td>
+                        <td class="key" data-key="106" data-operator="*" onclick="append('*')">*</td>
                     </tr>
                     <tr>
-                        <td onclick="append(4)">4</td>
-                        <td onclick="append(5)">5</td>
-                        <td onclick="append(6)">6</td>
-                        <td onclick="append('+')">+</td>
+                        <td class="key" data-key="100" data-key1="52" onclick="append(4)">4</td>
+                        <td class="key" data-key="101" data-key1="53" onclick="append(5)">5</td>
+                        <td class="key" data-key="102" data-key1="54" onclick="append(6)">6</td>
+                        <td class="key" data-key="107" data-operator="+" onclick="append('+')">+</td>
                     </tr>
                     <tr>
-                        <td onclick="append(7)">7</td>
-                        <td onclick="append(8)">8</td>
-                        <td onclick="append(9)">9</td>
-                        <td onclick="append('-')">-</td>
+                        <td class="key" data-key="103" data-key1="55" onclick="append(7)">7</td>
+                        <td class="key" data-key="104" data-key1="56" onclick="append(8)">8</td>
+                        <td class="key" data-key="105" data-key1="57" onclick="append(9)">9</td>
+                        <td class="key" data-key="109" data-operator="-" onclick="append('-')">-</td>
                     </tr>
                     <tr>
-                        <td onclick="append('.')">.</td>
-                        <td onclick="append(0)">0</td>
-                        <td onclick="enter()" colspan="2">=</td>
+                        <td class="key" data-key="110" data-operator="."="" onclick="append('.')">.</td>
+                        <td class="key" data-key="96" data-key1="48" onclick="append(0)">0</td>
+                        <td class="key" data-key="13" onclick="enter()" colspan="2">=</td>
                     </tr>
                 </table>
             </div>
