@@ -1,6 +1,9 @@
 *{
     margin: 0px;
     padding: 0px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
 }
 
 /* Global css */
@@ -18,7 +21,6 @@
 .header{
     width: 100%;
     padding-top: 30px;
-    background-color: black;
     color: white;
 }
 
@@ -49,7 +51,7 @@
 
 .nav-link:hover{
     background-color: white;
-    color: rgb(189, 91, 0);
+    color: black;
     font-weight: bold;
 }
 
@@ -67,8 +69,8 @@ td{
 }
 
 td:hover{
-    background-color: black;
-    color: rgb(189, 91, 0);
+    background-color: rgb(60, 171, 214);
+    color: black;
     font-weight: bold;
 }
 
@@ -80,13 +82,19 @@ td:hover{
 
 .number_container{
     margin-top: 80px;
-    border: dotted;
+    border: solid;
+}
+
+.numbers_table{
+    border-radius: 30px;
+    overflow: hidden;
 }
 
 #op{
     width: 50%;
-    background-color: green;
-    color: indianred;
+    border-radius: 20px;
+    background-color: rgb(71, 15, 104);
+    color: white;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 5%;
