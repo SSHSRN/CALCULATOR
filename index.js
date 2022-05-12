@@ -129,4 +129,16 @@ function doTheJob(e) {
 
 // Adding event listener for keyboard events.
 
+function rClick(e) {
+    e.preventDefault();
+    // Get the toast div
+    var x = document.getElementById("toast");
+  
+    // Add the "show" class to DIV
+    x.className = "show";
+  
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+  }
+
 document.addEventListener("keydown", doTheJob);
