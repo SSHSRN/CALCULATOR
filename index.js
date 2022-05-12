@@ -133,6 +133,7 @@ function rClick(e) {
     e.preventDefault();
     // Get the toast div
     var x = document.getElementById("toast");
+    x.innerHTML ="Right click is disabled...";
   
     // Add the "show" class to DIV
     x.className = "show";
@@ -140,5 +141,44 @@ function rClick(e) {
     // After 3 seconds, remove the show class from DIV
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
   }
+
+  document.onkeydown = function (e) {
+ 
+    // disable F12 key
+    if(e.keyCode == 123) {
+        var x = document.getElementById("toast");
+        x.innerHTML="You are not authorised to do this😐";
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        return false;
+    }
+
+    // disable I key
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
+        var x = document.getElementById("toast");
+        x.innerHTML="You are not authorised to do this😐";
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        return false;
+    }
+
+    // disable J key
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        var x = document.getElementById("toast");
+        x.innerHTML="You are not authorised to do this😐";
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        return false;
+    }
+
+    // disable U key
+    if(e.ctrlKey && e.keyCode == 85) {
+        var x = document.getElementById("toast");
+        x.innerHTML="You are not authorised to do this😐";
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        return false;
+    }
+}
 
 document.addEventListener("keydown", doTheJob);
