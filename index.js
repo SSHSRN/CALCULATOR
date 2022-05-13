@@ -154,19 +154,6 @@ function rClick(e) {
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
   }
 
-// DevTools Opened Script
-function DevToolsOpened() {
-    // Get the toast div
-    var x = document.getElementById("toast");
-    x.innerHTML ="You are not authorised to do this...";
-  
-    // Add the "show" class to DIV
-    x.className = "show";
-  
-    // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-}
-
 // Detect Key Shortcuts
 window.addEventListener('keydown', function(e) {
     if (
@@ -190,7 +177,16 @@ window.addEventListener('keydown', function(e) {
         e.metaKey == true && e.altKey == true && e.keyCode == 85 ||
         e.ctrlKey == true && e.keyCode == 85
     ) {
-        DevToolsOpened();
+        // Get the toast div
+        var x = document.getElementById("toast");
+        x.innerHTML ="You are not authorised to do this...";
+    
+        // Add the "show" class to DIV
+        x.className = "show";
+    
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        return false;
     }
 });
 
