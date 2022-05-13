@@ -1,3 +1,15 @@
+/* Validation */
+function site_validate(){
+    if(window.name != "calc"){
+        window.location.replace("./error.html");
+    }
+}
+document.onload = site_validate()
+
+
+
+
+
 /* Variables initialisation and declaration */
 var result = 0;
 var isOperator = 0;
