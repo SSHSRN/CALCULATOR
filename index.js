@@ -155,7 +155,7 @@ function rClick(e) {
   }
 
 // Detect Key Shortcuts
-window.addEventListener('keydown', function(e) {
+document.onkeydown = function (e) {
     if (
         // CMD + Alt + I (Chrome, Firefox, Safari)
         e.metaKey == true && e.altKey == true && e.keyCode == 73 ||
@@ -166,11 +166,13 @@ window.addEventListener('keydown', function(e) {
         // CMD + Shift + C (Chrome)
         e.metaKey == true && e.shiftKey == true && e.keyCode == 67 ||
         // Ctrl + Shift + I (Chrome, Firefox, Safari, Edge)
-        e.ctrlKey == true && e.shiftKey == true && e.keyCode == 73 ||
-        // Ctrl + Shift + J (Chrome, Edge)
-        e.ctrlKey == true && e.shiftKey == true && e.keyCode == 74 ||
-        // Ctrl + Shift + C (Chrome, Edge)
-        e.ctrlKey == true && e.shiftKey == true && e.keyCode == 67 ||
+        // e.ctrlKey == true && e.shiftKey == true && e.keyCode == 73 ||
+        // // Ctrl + Shift + J (Chrome, Edge)
+        // e.ctrlKey == true && e.shiftKey == true && e.keyCode == 74 ||
+        // // Ctrl + Shift + C (Chrome, Edge)
+        // e.ctrlKey == true && e.shiftKey == true && e.keyCode == 67 ||
+        // Ctrl + Shift
+        e.ctrlKey == true && e.shiftKey == true ||
         // F12 (Chome, Firefox, Edge)
         e.keyCode == 123 ||
         // CMD + Alt + U, Ctrl + U (Chrome, Firefox, Safari, Edge)
@@ -188,7 +190,7 @@ window.addEventListener('keydown', function(e) {
         setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
         return false;
     }
-});
+};
 
 
 document.addEventListener("keydown", doTheJob);
